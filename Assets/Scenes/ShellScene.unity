@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db52b2496ab4c3c418145608996c6c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GolfinRedux.UI.FadeController
-  _defaultDuration: 10
+  _defaultDuration: 0.5
 --- !u!225 &59621555
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -180,8 +180,8 @@ CanvasGroup:
   m_GameObject: {fileID: 59621552}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &59621556
 MonoBehaviour:
@@ -2194,8 +2194,8 @@ RectTransform:
   m_Children:
   - {fileID: 969299594}
   - {fileID: 1511582471}
-  - {fileID: 59621553}
   - {fileID: 677848798}
+  - {fileID: 59621553}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
