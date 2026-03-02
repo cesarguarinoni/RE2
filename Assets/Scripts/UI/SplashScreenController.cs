@@ -10,7 +10,7 @@ namespace GolfinRedux.UI
 
             var manager = FindObjectOfType<ScreenManager>();
             if (manager != null)
-                manager.ShowScreen(ScreenId.Loading, true);
+                manager.ShowScreen(ScreenId.Loading);
             else
                 Debug.LogError("ScreenManager not found");
         }
