@@ -1,4 +1,3 @@
-// Assets/Scripts/Localization/LocalizedText.cs
 using TMPro;
 using UnityEngine;
 
@@ -15,18 +14,21 @@ public class LocalizedText : MonoBehaviour
 
     private void OnEnable()
     {
+        LocalizationManager.OnLanguageChanged += Refresh;
         Refresh();
+    }
+
+    private void OnDisable()
+    {
+        LocalizationManager.OnLanguageChanged -= Refresh;
     }
 
     public void Refresh()
     {
         if (_label != null && !string.IsNullOrEmpty(key))
-        {
             _label.text = LocalizationManager.Get(key);
-        }
     }
 
-    // Optional helper to change key at runtime
     public void SetKey(string newKey)
     {
         key = newKey;

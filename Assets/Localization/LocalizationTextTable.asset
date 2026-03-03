@@ -12,4 +12,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de699fa35246e84993212229665b7e5, type: 3}
   m_Name: LocalizationTextTable
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationTextTable
-  rows: []
+  rows:
+  - key: BTN_PLAY
+    english: NOW LOADING
+    japanese: JAP1
+  - key: BTN_START
+    english: TEST
+    japanese: JAP2
+  - key: BTN_CREATE
+    english: CREATE ACCOUNT
+    japanese: JAP3
+  - key: BTN_LOGIN
+    english: LOGIN
+    japanese: 
+  - key: TIP_HEADER
+    english: PRO TIP
+    japanese: 
+  - key: TIP_NEXT
+    english: TAP FOR NEXT TIP
+    japanese: 
+  - key: TIP_CLUB_BAG
+    english: '{gold}HOLD{/gold} THE CLUB BALL BUTTON TO ENTER YOUR BAGS IN-GAME'
+    japanese: 
+  - key: TIP_FORECAST
+    english: LANDING {gold}FORECAST{/gold} DOES NOT FACTOR THE BALL'S RUN OR WIND.
+      COMPENSATE ACCORDINGLY
+    japanese: 
+  - key: TIP_RARITIES
+    english: DIFFERENT {gold}RARITIES{/gold} BESTOW DIFFERENT {gold}INITIAL STATS{/gold}
+      AND MAX LEVEL
+    japanese: 
+  - key: TIP_SWING
+    english: '{gold}PULL{/gold} THE CLUB BACK THEN {gold}FLICK{/gold} IT FORWARD
+      TO SWING'
+    japanese: 
+  - key: TIP_ACCURACY
+    english: '{gold}FLICKER{/gold} THROUGH THE BALL FOR PERFECT ACCURACY'
+    japanese: 
+  - key: TIP_LEADERBOARD
+    english: LOOK FOR THESE ICONS IN {gold}LEADERBOARDS{/gold} FOR LONGEST SHOTS
+    japanese: 
+  - key: TIP_TIMING
+    english: HIT THE BALL WHEN {gold}HIGHLIGHTED{/gold} FOR A PERFECT SHOT
+    japanese: 
+  - key: TIP_VIEW_SWITCH
+    english: '{gold}DOUBLE TAP{/gold} TO SWITCH BETWEEN SHOT VIEW AND MAP VIEW'
+    japanese: 
+  - key: HOME_CURRENCY_LABEL
+    english: COINS
+    japanese: 
+  - key: HOME_USERNAME
+    english: USERNAME
+    japanese: 
+  - key: HOME_MAINTENANCE_TITLE
+    english: MAINTENANCE NOTICE
+    japanese: 
+  - key: HOME_MAINTENANCE_BODY
+    english: 'Scheduled server maintenance: 2025/12/31\nThe game will not be available
+      for a short time\nduring maintenance.'
+    japanese: 
+  - key: HOME_GPS_TITLE
+    english: "GOLFIN\xB7GPS"
+    japanese: 
+  - key: HOME_GPS_SUBTITLE
+    english: CHECK-IN WITH GPS
+    japanese: 
+  - key: HOME_GPS_DESC
+    english: EARN MORE POINTS TO POWER UP!
+    japanese: 
+  - key: HOME_NEXT_HOLE
+    english: NEXT HOLE
+    japanese: 
+  - key: HOME_COURSE_NAME
+    english: Lomond Country Club  - Hole 5
+    japanese: 
+  - key: HOME_PLAY
+    english: PLAY
+    japanese: ???
+  - key: HOME_NAV_HOME
+    english: HOME
+    japanese: 
+  - key: HOME_NAV_SHOP
+    english: SHOP
+    japanese: 
+  - key: HOME_NAV_PLAY
+    english: PLAY
+    japanese: 
+  - key: HOME_NAV_BAG
+    english: BAG
+    japanese: 
+  - key: HOME_NAV_MORE
+    english: MORE
+    japanese: 
+  - key: HOME_SETTINGS
+    english: SETTINGS
+    japanese: 

@@ -1,4 +1,4 @@
-// Assets/Scripts/Localization/LocalizationManager.cs
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,9 @@ public static class LocalizationManager
     private static Dictionary<string, LocalizedTextRow> _textMap;
 
     public static Language CurrentLanguage { get; private set; } = Language.English;
+
+    // Fired when language changes (for runtime refresh)
+    public static event Action OnLanguageChanged;
 
     public static void Initialize(LocalizationTextTable table, Language defaultLanguage)
     {
@@ -24,17 +27,17 @@ public static class LocalizationManager
 
     public static void SetLanguage(Language language)
     {
+        if (CurrentLanguage == language)
+            return;
+
         CurrentLanguage = language;
-        // Optionally: notify listeners to refresh UI
+        OnLanguageChanged?.Invoke();
     }
 
     public static string Get(string key)
     {
         if (_textMap == null || !_textMap.TryGetValue(key, out var row))
-        {
-            // Fallback: show the key itself so missing entries are obvious
-            return key;
-        }
+            return key; // fallback: key
 
         return CurrentLanguage switch
         {

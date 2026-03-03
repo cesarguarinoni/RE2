@@ -8,17 +8,21 @@ public static class LocalizationTextImporter
 {
     private const char Separator = ',';
 
-    [MenuItem("Tools/Localization/Import Text CSV")]
-    public static void Import()
-    {
-        // Adjust these paths as needed
-        string csvPath = "Assets/Localization/LocalizationText.csv";
-        string assetPath = "Assets/Localization/LocalizationTextTable.asset";
+    private const string CsvPath = "Assets/Localization/LocalizationText.csv";
+    private const string AssetPath = "Assets/Localization/LocalizationTextTable.asset";
 
+    [MenuItem("Tools/Localization/Import Text CSV")]
+    public static void ImportFromMenu()
+    {
+        ImportCsv(CsvPath, AssetPath, true);
+    }
+
+    public static void ImportCsv(string csvPath = CsvPath, string assetPath = AssetPath, bool logResult = false)
+    {
         var csvAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(csvPath);
         if (csvAsset == null)
         {
-            Debug.LogError($"CSV not found at path: {csvPath}");
+            Debug.LogError($"[Localization] CSV not found at path: {csvPath}");
             return;
         }
 
@@ -50,7 +54,6 @@ public static class LocalizationTextImporter
                     continue;
                 }
 
-                // basic safety
                 if (cols.Length < 3)
                     continue;
 
@@ -69,7 +72,8 @@ public static class LocalizationTextImporter
         EditorUtility.SetDirty(table);
         AssetDatabase.SaveAssets();
 
-        Debug.Log($"Localization CSV imported. Rows: {table.rows.Count}");
+        if (logResult)
+            Debug.Log($"[Localization] CSV imported. Rows: {table.rows.Count}");
     }
 }
 #endif
