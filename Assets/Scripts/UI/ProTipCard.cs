@@ -87,45 +87,55 @@ public class ProTipCard : MonoBehaviour, IPointerClickHandler
 
         _currentTipIndex = Mathf.Abs(index) % tipKeys.Length;
 
-        // Localized tip body (replace with your LocalizationManager if needed)
+        // --- TEXT ---
         if (tipText != null)
         {
-            string text = tipKeys[_currentTipIndex];
-            tipText.text = text;
+            // Prefer the LocalizedText component if present
+            var loc = tipText.GetComponent<LocalizedText>();
+            if (loc != null)
+            {
+                // Use the key to fetch the real text from LocalizationText.csv
+                loc.SetKey(tipKeys[_currentTipIndex]);
+            }
+            else
+            {
+                // Fallback: show the key itself
+                tipText.text = tipKeys[_currentTipIndex];
+            }
         }
 
         // Tip image
+        // --- IMAGE ---
         if (tipImageDisplay != null)
         {
             Sprite sprite = null;
-            if (tipSprites != null && _currentTipIndex < tipSprites.Length)
+
+            if (tipSprites != null &&
+                _currentTipIndex >= 0 &&
+                _currentTipIndex < tipSprites.Length)
+            {
                 sprite = tipSprites[_currentTipIndex];
+            }
 
             if (sprite != null)
             {
                 tipImageDisplay.sprite = sprite;
                 tipImageDisplay.gameObject.SetActive(true);
-                float nativeW = sprite.rect.width;
-                float nativeH = sprite.rect.height;
 
-                if (_imageLayoutElement != null)
-                {
-                    _imageLayoutElement.preferredWidth = nativeW;
-                    _imageLayoutElement.preferredHeight = nativeH;
-                }
-
-                var rt = tipImageDisplay.rectTransform;
-                rt.sizeDelta = new Vector2(nativeW, nativeH);
+                // Optional: keep aspect, no fancy resizing yet
                 tipImageDisplay.preserveAspect = true;
             }
             else
             {
+                // If there's truly no sprite, hide the image object
                 tipImageDisplay.gameObject.SetActive(false);
             }
         }
 
+        // Force layout so card resizes to new content
         LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
     }
+
 
     public void NextTip()
     {
