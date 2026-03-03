@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LocalizationTextTable
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationTextTable
   rows:
-  - key: BTN_PLAY
+  - key: BTN_LOADING
     english: NOW LOADING
     japanese: JAP1
   - key: BTN_START
@@ -31,32 +31,30 @@ MonoBehaviour:
   - key: TIP_NEXT
     english: TAP FOR NEXT TIP
     japanese: 
-  - key: TIP_CLUB_BAG
-    english: '{gold}HOLD{/gold} THE CLUB BALL BUTTON TO ENTER YOUR BAGS IN-GAME'
+  - key: TIP_CLUB
+    english: HOLD THE CLUB BALL BUTTON TO ENTER YOUR BAGS IN-GAME
     japanese: 
   - key: TIP_FORECAST
-    english: LANDING {gold}FORECAST{/gold} DOES NOT FACTOR THE BALL'S RUN OR WIND.
-      COMPENSATE ACCORDINGLY
+    english: LANDINGFORECAST  DOES NOT FACTOR THE BALL'S RUN OR WIND. COMPENSATE
+      ACCORDINGLY
     japanese: 
   - key: TIP_RARITIES
-    english: DIFFERENT {gold}RARITIES{/gold} BESTOW DIFFERENT {gold}INITIAL STATS{/gold}
-      AND MAX LEVEL
+    english: DIFFERENT RARITIES  BESTOW DIFFERENT INITIAL STATS  AND MAX LEVEL
     japanese: 
   - key: TIP_SWING
-    english: '{gold}PULL{/gold} THE CLUB BACK THEN {gold}FLICK{/gold} IT FORWARD
-      TO SWING'
+    english: PULL  THE CLUB BACK THEN FLICK  IT FORWARD TO SWING
     japanese: 
   - key: TIP_ACCURACY
-    english: '{gold}FLICKER{/gold} THROUGH THE BALL FOR PERFECT ACCURACY'
+    english: FLICKER  THROUGH THE BALL FOR PERFECT ACCURACY
     japanese: 
   - key: TIP_LEADERBOARD
-    english: LOOK FOR THESE ICONS IN {gold}LEADERBOARDS{/gold} FOR LONGEST SHOTS
+    english: LOOK FOR THESE ICONS IN LEADERBOARDS  FOR LONGEST SHOTS
     japanese: 
   - key: TIP_TIMING
-    english: HIT THE BALL WHEN {gold}HIGHLIGHTED{/gold} FOR A PERFECT SHOT
+    english: HIT THE BALL WHEN HIGHLIGHTED  FOR A PERFECT SHOT
     japanese: 
-  - key: TIP_VIEW_SWITCH
-    english: '{gold}DOUBLE TAP{/gold} TO SWITCH BETWEEN SHOT VIEW AND MAP VIEW'
+  - key: TIP_VIEW
+    english: DOUBLE TAP TO SWITCH BETWEEN SHOT VIEW AND MAP VIEW
     japanese: 
   - key: HOME_CURRENCY_LABEL
     english: COINS

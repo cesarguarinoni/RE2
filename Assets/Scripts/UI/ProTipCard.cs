@@ -32,7 +32,9 @@ public class ProTipCard : MonoBehaviour, IPointerClickHandler
 
     [Header("Settings")]
     [SerializeField] private float autoCycleInterval = 8f;
-    [SerializeField] private float textFadeDuration = 0.3f; private int _currentTipIndex;
+    [SerializeField] private float textFadeDuration = 0.3f;
+
+    private int _currentTipIndex;
     private bool _initialized;
     private Coroutine _autoCycleCoroutine;
     private CanvasGroup _tipTextCanvasGroup;
@@ -72,18 +74,8 @@ public class ProTipCard : MonoBehaviour, IPointerClickHandler
         _currentTipIndex = 0;
         _initialized = true;
 
-        // Static texts (assuming you hook these up to your localization system)
-        if (headerText != null)
-        {
-            var loc = headerText.GetComponent<LocalizedText>();
-            if (loc != null) loc.SetKey("tip_header"); // e.g. "PRO TIP"
-        }
-
-        if (tapNextText != null)
-        {
-            var loc = tapNextText.GetComponent<LocalizedText>();
-            if (loc != null) loc.SetKey("tip_next"); // e.g. "Tap for next tip"
-        }
+        // Static texts can be localized via your system if you add LocalizedText
+        // on headerText and tapNextText and call SetKey here if needed.
 
         ShowTip(0);
         RestartAutoCycle();
@@ -95,16 +87,10 @@ public class ProTipCard : MonoBehaviour, IPointerClickHandler
 
         _currentTipIndex = Mathf.Abs(index) % tipKeys.Length;
 
-        // Localized tip body
+        // Localized tip body (replace with your LocalizationManager if needed)
         if (tipText != null)
         {
             string text = tipKeys[_currentTipIndex];
-
-            // If your localization system is in place, use it here:
-            var locManager = LocalizationManager.Instance; // from your CSV-based system
-            if (locManager != null)
-                text = locManager.GetText(tipKeys[_currentTipIndex]);
-
             tipText.text = text;
         }
 
@@ -119,7 +105,6 @@ public class ProTipCard : MonoBehaviour, IPointerClickHandler
             {
                 tipImageDisplay.sprite = sprite;
                 tipImageDisplay.gameObject.SetActive(true);
-
                 float nativeW = sprite.rect.width;
                 float nativeH = sprite.rect.height;
 
@@ -139,7 +124,6 @@ public class ProTipCard : MonoBehaviour, IPointerClickHandler
             }
         }
 
-        // Force layout so the card resizes to fit new content
         LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
     }
 
